@@ -1,0 +1,138 @@
+{
+    "appName": "Commerce",
+    "navbar": {
+        "logo": "logo.png",
+        "actions": [
+            {
+                "title": "Início",
+                "path": "/"
+            },
+            {
+                "title": "Cardápio",
+                "path": "/"
+            },
+            {
+                "title": "Sobre",
+                "path": "/"
+            },
+            {
+                "title": "Sobre",
+                "path": "/"
+            },
+            {
+                "title": "Fale-conosco",
+                "path": "/"
+            }
+        ]
+    },
+    "footer": {
+        "contact": {
+            "linkLocation": "http://www.example.link.com",
+            "locationTitle": "Barra Mansa Rj",
+            "telephone": "(24) 98818-0688",
+            "mailer": "isaac8.silva@hotmail.com"
+        },
+        "operation": {
+            "title": "Hoários de Funcionamento",
+            "hours": [
+                {
+                    "subtile": "Ter a Sext",
+                    "hour": "18.00 - 22.00"
+                },
+                {
+                    "subtile": "Sab a Dom",
+                    "hour": "18.00 - 24.00"
+                }
+            ]
+        }
+    },
+    "pages": [
+        {
+            "home": {
+                "banner": {
+                    "title": "Fast Food Restaurant",
+                    "description": "Doloremque, itaque aperiam facilis rerum, commodi, temporibus sapiente ad mollitia laborum quam quisquam esse error unde. Tempora ex doloremque, labore, sunt repellat dolore, iste magni quos nihil ducimus libero ipsam.",
+                    "countActionName": "Compre Agora",
+                    "countActionLink": "#menu",
+                    "image": "images/hero-bg.jpg"
+                },
+                "highlights": [
+                    {
+                        "title": "Brother Burger",
+                        "discount": 20,
+                        "image": "Comprar Agora"
+                    },
+                    {
+                        "title": "Dia da Pizza",
+                        "discount": 20,
+                        "image": "Comprar Agora"
+                    }
+                ],
+                "menu": {
+                    "categories": [
+                        "Hamburguer",
+                        "Pizza",
+                        "Fritas",
+                        "Bebidas"
+                    ],
+                    "products": [
+                        {
+                            "id": "1adce88d-6956-45a8-93bb-a65eeffabfb0",
+                            "category": "Hamburguer",
+                            "title": "Delicious Burger",
+                            "description": "Veniam debitis quaerat officiis quasi cupiditate quo, quisquam velit, magnam voluptatem repellendus sed eaque.",
+                            "image": "images/f2.png",
+                            "price": 15.99,
+                            "typeMoney": "R$"
+                        },
+                        {
+                            "id": "0fda77d1-f2ff-4406-8bae-f89426a48189",
+                            "category": "Hamburguer",
+                            "title": "Tasty Burger",
+                            "description": "Veniam debitis quaerat officiis quasi cupiditate quo, quisquam velit, magnam voluptatem repellendus sed eaque.",
+                            "image": "images/f7.png",
+                            "price": 19.99,
+                            "typeMoney": "R$"
+                        },
+                        {
+                            "id": "7ed0b69b-dbbf-4f8e-ab52-97c8c4da75d7",
+                            "category": "Hamburguer",
+                            "title": "Tasty Burger",
+                            "description": "Veniam debitis quaerat officiis quasi cupiditate quo, quisquam velit, magnam voluptatem repellendus sed eaque.",
+                            "image": "images/f8.png",
+                            "price": 24.99,
+                            "typeMoney": "R$"
+                        },
+                        {
+                            "id": "4b206768-357f-43cf-934a-1ad5fd8fadc5",
+                            "category": "Fritas",
+                            "title": "French Fries",
+                            "description": "Veniam debitis quaerat officiis quasi cupiditate quo, quisquam velit, magnam voluptatem repellendus sed eaque.",
+                            "image": "images/f5.png",
+                            "price": 13.50,
+                            "typeMoney": "R$"
+                        },
+                        {
+                            "id": "f751750e-fde6-4bd1-aae0-53203e6a08ac",
+                            "category": "Pizza",
+                            "title": "Delicious Pizza",
+                            "description": "Veniam debitis quaerat officiis quasi cupiditate quo, quisquam velit, magnam voluptatem repellendus sed eaque.",
+                            "image": "images/f3.png",
+                            "price": 54.99,
+                            "typeMoney": "R$"
+                        },
+                        {
+                            "id": "06d05b0d-8f43-40e2-ac59-c38f8cd424d4",
+                            "category": "Pizza",
+                            "title": "TDelicious Pizza",
+                            "description": "Veniam debitis quaerat officiis quasi cupiditate quo, quisquam velit, magnam voluptatem repellendus sed eaque.",
+                            "image": "images/f6.png",
+                            "price": 64.99,
+                            "typeMoney": "R$"
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}
