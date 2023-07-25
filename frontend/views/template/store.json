@@ -134,5 +134,28 @@
                 }
             }
         }
+    ],
+    "delivery": [
+        {
+            "id": "06d05b0d-8f43-40e2-ac59-c38f8cd424d40",
+            "state": "Rj",
+            "city": "Barra Mansa",
+            "neighborhood": "Barra Mansa, Ano Bom",
+            "price": 5.99
+        },
+        {
+            "id": "06d05b0d-8f43-40e2-ac59-c38f8cd424d41",
+            "state": "Rj",
+            "city": "Barra Mansa",
+            "neighborhood": "Barra Mansa, Vila Coringa",
+            "price": 5.99
+        },
+        {
+            "id": "06d05b0d-8f43-40e2-ac59-c38f8cd424d42",
+            "state": "Rj",
+            "city": "Barra Mansa",
+            "neighborhood": "Barra Mansa, Vista Alegre",
+            "price": 5.99
+        }
     ]
 }

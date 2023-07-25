@@ -13,6 +13,45 @@ function addToCart(productId, productName, price, image) {
     return
 }
 
+function removeToCart(productId) {
+    const json_cart = localStorage.getItem("cart");
+    const cart = JSON.parse(json_cart) || [];
+    const removeIfExist = cart?.filter(e => e?.productId != productId) || []
+    localStorage.setItem("cart", JSON.stringify(removeIfExist))
+    setCart(removeIfExist)
+    setTotalPriceCart(calculateTotalCart(removeIfExist))
+}
+
+function incrementToCart(productId) {
+    const json_cart = localStorage.getItem("cart");
+    const cart = JSON.parse(json_cart) || [];
+    const index = cart.findIndex(e => e.productId == productId)
+    if (index >= 0) {
+        cart[index].quantity += 1
+        localStorage.setItem("cart", JSON.stringify(cart))
+        setCart(cart)
+        setTotalPriceCart(calculateTotalCart(cart))
+        return true
+    }
+    return false
+}
+
+function decrementToCart(productId) {
+    const json_cart = localStorage.getItem("cart");
+    const cart = JSON.parse(json_cart) || [];
+    const index = cart.findIndex(e => e.productId == productId)
+    if (index < 0) return false
+    if(cart[index].quantity > 1){
+        cart[index].quantity -= 1
+        localStorage.setItem("cart", JSON.stringify(cart))
+        setCart(cart)
+        setTotalPriceCart(calculateTotalCart(cart))
+        return true
+    }
+    removeToCart(productId)
+    return true
+}
+
 function calculateTotalCart(carts) {
     const setCarts = carts || []
     if (setCarts.length == 0) return 0;
@@ -44,6 +83,13 @@ function setCart(carts) {
                         <h6 class="card-title"><strong>${cart.productName}</strong></h6>
                         <hr>
                         <p class="card-title">Preço Uni: R$ ${cart.price} - ${cart.quantity}x</p>
+                        <div class="row">
+                            <div class="btn-group" role="group" aria-label="Basic example">
+                              <button type="button" class="btn btn-dark" onclick="incrementToCart('${cart.productId}')">+</button>
+                              <button type="button" class="btn btn-dark" onclick="decrementToCart('${cart.productId}')">-</button>
+                              <button type="button" class="btn btn-dark" onclick="removeToCart('${cart.productId}')">x</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

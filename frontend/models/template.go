@@ -2,7 +2,7 @@ package models
 
 import (
 	"encoding/json"
-	"io/ioutil"
+	"io"
 	"log"
 	"os"
 )
@@ -59,6 +59,13 @@ type Template struct {
 			} `json:"menu"`
 		} `json:"home"`
 	} `json:"pages"`
+	Delivery []struct {
+		ID           string  `json:"id"`
+		State        string  `json:"state"`
+		City         string  `json:"city"`
+		Neighborhood string  `json:"neighborhood"`
+		Price        float32 `json:"price"`
+	} `json:"delivery"`
 }
 
 func (thisTemplate *Template) GetTemplate() (err error) {
@@ -67,7 +74,7 @@ func (thisTemplate *Template) GetTemplate() (err error) {
 		log.Fatalf(err.Error())
 	}
 	defer templateJson.Close()
-	byteValueJSON, err := ioutil.ReadAll(templateJson)
+	byteValueJSON, err := io.ReadAll(templateJson)
 	json.Unmarshal(byteValueJSON, &thisTemplate)
 	return
 }

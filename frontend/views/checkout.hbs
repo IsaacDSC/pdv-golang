@@ -34,29 +34,45 @@
 <body>
     {{> 'partials/navbar' }}
     <div class="container">
-        <h1 class="text-center">Obrigado pela preferência</h1>
+        <h1 class="text-center">Obrigado pela preferência!!</h1>
         <hr>
         <div class="row mt-5 mb-5">
-            <div class="col"></div>
-            <div class="col-8">
+            <div class="col">
+                <div class="container">
+                    <h2>Login</h2>
+                    <hr>
+                    <form id="login-form">
+                        <input name="username" class="form-control form-control-lg mt-2" type="text"
+                            placeholder="Username" aria-label=".form-control-lg example">
+                        <input name="password" class="form-control form-control-lg mt-2" type="password"
+                            placeholder="Password" aria-label=".form-control-lg example">
+                        <hr>
+                        <a href="#" class="mt-4" style="margin-top: 5px;">Criar uma conta agora</a>
+                        <button type="button" onclick="new Checkout().sendCheckout()" class="btn btn-warning mt-4"
+                            style="width: 100%;">Login</button>
+                    </form>
+                </div>
+            </div>
+            <div class="col">
+                <h2>Compra sem Login</h2>
+                <hr>
                 <form id="checkout-form">
-                    <input name="CEP" class="form-control form-control-lg mt-2" type="text" placeholder="CEP"
-                        aria-label=".form-control-lg example">
-                    <input name="city" class="form-control form-control-lg mt-2" type="text" placeholder="Cidade"
-                        aria-label=".form-control-lg example">
-                    <input name="neighborhood" class="form-control form-control-lg mt-2" type="text"
-                        placeholder="Bairro" aria-label=".form-control-lg example">
+                    <select class="form-select form-control form-control-lg mt-2" aria-label="Default select example">
+                        <option selected>Selecione o ponto de entrega</option>
+                        {{#each delivery}}
+                        <option value="1">{{this.state}} - {{this.neighborhood}}</option>
+                        {{/each}}
+                    </select>
                     <input name="address" class="form-control form-control-lg mt-2" type="text" placeholder="Rua"
                         aria-label=".form-control-lg example">
                     <input name="homeNumber" class="form-control form-control-lg mt-2" type="text" placeholder="Numero"
                         aria-label=".form-control-lg example">
                     <input name="observation" class="form-control form-control-lg mt-2" type="text"
                         placeholder="Ponto de Referência" aria-label=".form-control-lg example">
-                    <button type="button" onclick="new Checkout().sendCheckout()" class="btn btn-warning mt-4">Finalizar
+                    <button type="button" onclick="new Checkout().sendCheckout()" class="btn btn-warning mt-4" style="width: 100%;">Finalizar
                         Pedido</button>
                 </form>
             </div>
-            <div class="col"></div>
         </div>
     </div>
     {{>'partials/footer'}}
