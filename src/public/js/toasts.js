@@ -1,6 +1,6 @@
 class Toast {
-    execute(productName) {
-        this.injectToast(productName)
+    execute(productName, image) {
+        this.injectToast(productName, image)
         this.showToast()
     }
 
@@ -10,12 +10,12 @@ class Toast {
         toastBootstrap.show()
     }
 
-    injectToast(productName) {
+    injectToast(productName, image) {
         const date = new Date()
         const injectToast = document.querySelector('#injected-toast')
         injectToast.innerHTML = `
         <div class="toast-header">
-            <img src="images/f2.png" class="rounded me-2" width="40" alt="...">
+            <img src="${image}" class="rounded me-2" width="40" alt="...">
             <strong class="me-auto">${productName}</strong>
             <small>${date.toISOString().substring(0,10)}</small>
             <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>

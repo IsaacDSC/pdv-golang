@@ -11,21 +11,6 @@
                     {{!-- INJECT CART --}}
                 </div>
                 <div class="container">
-                    <h4><small>Escolha o metodo de pagamento</small></h4>
-                    <hr>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                        <label class="form-check-label" for="flexRadioDefault1">
-                            Cartão
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2"
-                            checked>
-                        <label class="form-check-label" for="flexRadioDefault2">
-                            Dinheiro
-                        </label>
-                    </div>
                     <hr>
                     <div id="total_cart">
                         {{!-- INJECT PRICE TOTAL CART --}}
@@ -34,8 +19,8 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Sair</button>
-                <button type="button" class="btn btn-success">
-                    <a href="/checkout">Comprar</a>
+                <button onclick="new Checkout().execute()" type="button" class="btn btn-success">
+                    Comprar
                 </button>
             </div>
         </div>

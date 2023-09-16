@@ -1,0 +1,25 @@
+echo '{"billingType":"CREDIT_CARD","chargeType":"DETACHED","value":20,"endDate":"2023-09-20","name":"Pizzaria","description":"Compra x prod, loja etc","notificationEnabled":false}' |  \
+  http POST https://sandbox.asaas.com/api/v3/paymentLinks \
+  accept:application/json \
+  content-type:application/json
+
+billingType CREDIT_CARD | PIX
+
+response:
+{
+  "id": "291089675759",
+  "name": "Venda de livros",
+  "value": 50,
+  "active": true,
+  "chargeType": "DETACHED",
+  "url": "https://www.asaas.com/c/291089675759",
+  "billingType": "UNDEFINED",
+  "subscriptionCycle": null,
+  "description": "Qualquer livro por apenas R$: 50,00",
+  "endDate": "2021-02-05",
+  "deleted": false,
+  "viewCount": 0,
+  "maxInstallmentCount": 1,
+  "dueDateLimitDays": 10,
+  "notificationEnabled": true
+}

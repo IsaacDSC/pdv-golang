@@ -54,7 +54,7 @@ type Template struct {
 					Title       string  `json:"title"`
 					Description string  `json:"description"`
 					Image       string  `json:"image"`
-					Price       float64 `json:"price"`
+					Price       float32 `json:"price"`
 					TypeMoney   string  `json:"typeMoney"`
 				} `json:"products"`
 			} `json:"menu"`

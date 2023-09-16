@@ -1,7 +1,7 @@
-package controllers
+package controllers_frontend
 
 import (
-	"github.com/IsaacDSC/pdv-golang/src/settings"
+	"github.com/IsaacDSC/pdv-golang/src/infra/settings"
 	"github.com/gofiber/fiber/v2"
 )
 

@@ -1,5 +1,5 @@
 function addToCart(productId, productName, price, image) {
-    new Toast().execute(productName)
+    new Toast().execute(productName, image)
     const json_cart = localStorage.getItem("cart");
     const cart = JSON.parse(json_cart) || [];
     const alreadyExist = cart?.filter(e => e?.productId == productId) || []
@@ -73,7 +73,7 @@ function setCart(carts) {
     card_cart.innerHTML = null;
     carts.forEach((cart) => {
         card_cart.innerHTML += `
-        <div class="card mb-3" style="max-width: 540px; max-height: 200px;">
+        <div class="card mb-3" style="max-width: 540px;">
             <div class="row g-0">
                 <div class="col-md-4">
                     <img src="${cart.image}" class="img-fluid rounded-start" width="146px" alt="${cart.image}">
@@ -101,7 +101,7 @@ function setCart(carts) {
 function setTotalPriceCart(total) {
     const card_total_cart = document.querySelector('#total_cart');
     card_total_cart.innerHTML = `
-    <h5 class="text-right">Total: R$ ${total}</h5>
+    <h5 class="text-center"><strong>Total: </strong> R$ ${total}</h5>
     `;
 }
 
