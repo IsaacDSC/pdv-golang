@@ -8,9 +8,9 @@ type OrderInputDto struct {
 }
 
 type CartInputDto struct {
-	Price     float32 `json:"price"`
-	ProductID string  `json:"productId"`
-	Qtd       int     `json:"qtd"`
+	Price     uint32 `json:"price"`
+	ProductID string `json:"productId"`
+	Qtd       int    `json:"qtd"`
 }
 
 type DeliveryInputDto struct {
@@ -26,13 +26,13 @@ type ClientInputDto struct {
 
 type OrderOutputDto struct {
 	OrderID    string                `json:"orderId"`
-	Price      float32               `json:"price"`
+	Price      uint32                `json:"price"`
 	DeliveryID string                `json:"deliveryId"`
 	OrderItems []OrderItemsOutputDto `json:"orderItems"`
 }
 
 type OrderItemsOutputDto struct {
-	ProductID string  `json:"productId"`
-	Qtd       int32   `json:"qtd"`
-	Price     float32 `json:"price"`
+	ProductID string `json:"productId"`
+	Qtd       int32  `json:"qtd"`
+	Price     uint32 `json:"price"`
 }

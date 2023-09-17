@@ -3,7 +3,7 @@ package controllers_backend
 import (
 	"fmt"
 
-	"github.com/IsaacDSC/pdv-golang/src/shared/dto"
+	"github.com/IsaacDSC/pdv-golang/shared/dto"
 	"github.com/gofiber/fiber/v2"
 )
 

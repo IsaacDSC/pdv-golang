@@ -8,12 +8,5 @@ type DeliveryEntity struct {
 	Address    string
 	NumberHome string
 	Reference  string
-	/*
-		estado => RJ
-		cidade => BM
-		endereco => input
-		bairro => input
-		numero => input
-		ponto de referencia => input
-	*/
+	Token      string
 }

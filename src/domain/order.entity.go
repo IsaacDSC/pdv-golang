@@ -4,28 +4,29 @@ import (
 	"errors"
 	"fmt"
 
+	"github.com/IsaacDSC/pdv-golang/shared/dto"
 	"github.com/IsaacDSC/pdv-golang/src/infra/settings"
-	"github.com/IsaacDSC/pdv-golang/src/shared/dto"
 	"github.com/google/uuid"
 )
 
 type Order struct {
 	ID            uuid.UUID
-	OrderItems    map[string]orderItems
+	OrderItems    map[string]OrderItems
 	BillingType   string
-	Price         float32
-	Discount      float32
-	PriceDelivery float32
-	TaxDelivery   bool
+	Price         uint32
+	Discount      uint32
+	PriceDelivery uint32
+	IsDelivery    bool
+	Status        string
 	Delivery      DeliveryEntity
 	Client        ClientEntity
 }
 
-type orderItems struct {
+type OrderItems struct {
 	ID        uuid.UUID
 	ProductID string
 	Quantity  int32
-	Price     float32
+	Price     uint32
 }
 
 type OrderInterface interface {
@@ -43,6 +44,7 @@ func (o *Order) ToDomain(input dto.OrderInputDto) {
 	o = &Order{
 		ID:          uuid.New(),
 		BillingType: input.BillingType,
+		Status:      "OPEN",
 		Client: ClientEntity{
 			Name: input.Client.ClientName,
 		},
@@ -57,8 +59,8 @@ func (o *Order) ToDomain(input dto.OrderInputDto) {
 		},
 	}
 	for index := range input.Cart {
-		mapProducts := make(map[string]orderItems)
-		mapProducts[input.Cart[index].ProductID] = orderItems{
+		mapProducts := make(map[string]OrderItems)
+		mapProducts[input.Cart[index].ProductID] = OrderItems{
 			ID:        uuid.New(),
 			ProductID: input.Cart[index].ProductID,
 			Quantity:  int32(input.Cart[index].Qtd),
@@ -73,7 +75,7 @@ func (o *Order) Validate() (err error) {
 	for index := range template.Delivery {
 		if template.Delivery[index].ID == o.Delivery.ID {
 			existDeliveryID = true
-			o.TaxDelivery = true
+			o.IsDelivery = true
 			o.PriceDelivery = template.Delivery[index].Price
 			break
 		}
@@ -82,9 +84,9 @@ func (o *Order) Validate() (err error) {
 		err = errors.New("Not-Found-DeliveryID")
 	}
 	products := template.Pages[0].Home.Menu.Products
-	mapProducts := make(map[string]orderItems)
+	mapProducts := make(map[string]OrderItems)
 	for index := range products {
-		mapProducts[products[index].ID] = orderItems{
+		mapProducts[products[index].ID] = OrderItems{
 			ProductID: products[index].ID,
 			Price:     products[index].Price,
 		}

@@ -1,0 +1,13 @@
+version: "2"
+sql:
+  - engine: "postgresql"
+    queries:
+      - "./src/infra/database/queries/client.sql"
+      - "./src/infra/database/queries/delivery.sql"
+      - "./src/infra/database/queries/order_items.sql"
+      - "./src/infra/database/queries/order.sql"
+    schema: "./src/infra/database/schema/schema.sql"
+    gen:
+      go:
+        package: "sqlc"
+        out: "./external/sqlc"

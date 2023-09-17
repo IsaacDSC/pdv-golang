@@ -49,23 +49,23 @@ type Template struct {
 			Menu struct {
 				Categories []string `json:"categories"`
 				Products   []struct {
-					ID          string  `json:"id"`
-					Category    string  `json:"category"`
-					Title       string  `json:"title"`
-					Description string  `json:"description"`
-					Image       string  `json:"image"`
-					Price       float32 `json:"price"`
-					TypeMoney   string  `json:"typeMoney"`
+					ID          string `json:"id"`
+					Category    string `json:"category"`
+					Title       string `json:"title"`
+					Description string `json:"description"`
+					Image       string `json:"image"`
+					Price       uint32 `json:"price"`
+					TypeMoney   string `json:"typeMoney"`
 				} `json:"products"`
 			} `json:"menu"`
 		} `json:"home"`
 	} `json:"pages"`
 	Delivery []struct {
-		ID           string  `json:"id"`
-		State        string  `json:"state"`
-		City         string  `json:"city"`
-		Neighborhood string  `json:"neighborhood"`
-		Price        float32 `json:"price"`
+		ID           string `json:"id"`
+		State        string `json:"state"`
+		City         string `json:"city"`
+		Neighborhood string `json:"neighborhood"`
+		Price        uint32 `json:"price"`
 	} `json:"delivery"`
 }
 
